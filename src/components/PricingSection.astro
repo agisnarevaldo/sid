@@ -7,6 +7,8 @@ interface PricingTier {
     description: string;
     features: string[];
     note?: string;
+    link: string;
+    linkText: string;
 }
 
 const pricingTiers: PricingTier[] = [
@@ -27,6 +29,8 @@ const pricingTiers: PricingTier[] = [
             "Responsive (HP & laptop)",
             "SSL & keamanan dasar",
         ],
+        link: "https://dirgahayu.desainkode.site/",
+        linkText: "Lihat Contoh",
     },
     {
         number: 2,
@@ -41,6 +45,8 @@ const pricingTiers: PricingTier[] = [
             "Hak akses user (admin/operator)",
             "Backup data berkala",
         ],
+        link: "https://mandalasari.desainkode.site/",
+        linkText: "Lihat Contoh",
     },
     {
         number: 3,
@@ -57,6 +63,8 @@ const pricingTiers: PricingTier[] = [
             "Sistem siap dikembangkan",
             "Optimasi performa",
         ],
+        link: "https://wa.me/6281234567890",
+        linkText: "Mulai Konsultasi",
     },
 ];
 ---
@@ -137,7 +145,9 @@ const pricingTiers: PricingTier[] = [
                             <p class="font-cormorant italic font-semibold text-white text-base mb-4">
                                 {tier.description}
                             </p>
-                            <p class="font-montserrat font-semibold text-white text-sm mb-2">Fitur:</p>
+                            <p class="font-montserrat font-semibold text-white text-sm mb-2">
+                                Fitur:
+                            </p>
                             <ul class="list-none p-0 m-0">
                                 {tier.features.map((feature) => (
                                     <li class="font-montserrat font-normal text-white text-sm leading-7">
@@ -153,11 +163,9 @@ const pricingTiers: PricingTier[] = [
 
                             <div class="mt-6 text-center">
                                 <a
-                                    href={
-                                        tier.number === 3
-                                            ? "#konsultasi"
-                                            : "#demo"
-                                    }
+                                    href={tier.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class:list={[
                                         "inline-block font-montserrat font-semibold text-sm py-3 px-8 rounded-full transition-all duration-300",
                                         tier.number === 2
@@ -167,9 +175,7 @@ const pricingTiers: PricingTier[] = [
                                               : "border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50",
                                     ]}
                                 >
-                                    {tier.number === 3
-                                        ? "Mulai Konsultasi"
-                                        : "Lihat Demo"}
+                                    {tier.linkText}
                                 </a>
                             </div>
                         </div>
