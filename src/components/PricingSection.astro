@@ -1,4 +1,5 @@
 ---
+import ArrowUpRight from "@lucide/astro/icons/arrow-up-right";
 interface PricingTier {
     number: number;
     name: string;
@@ -106,10 +107,10 @@ const pricingTiers: PricingTier[] = [
                                 </span>
                             </div>
                         )}
-                        <div class="flex items-center gap-4 py-4">
+                        <div class="flex flex-wrap items-center gap-4 py-4">
                             <div
                                 class:list={[
-                                    "w-14 h-14 flex items-center justify-center shrink-0",
+                                    "w-14 h-14 flex items-start justify-center shrink-0",
                                     tier.number === 2
                                         ? "bg-purple-brand"
                                         : "bg-white",
@@ -175,7 +176,8 @@ const pricingTiers: PricingTier[] = [
                                               : "border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50",
                                     ]}
                                 >
-                                    {tier.linkText}
+                                    {tier.linkText}{" "}
+                                    <ArrowUpRight class="inline-block w-4 h-4 ml-2 -mt-1" />
                                 </a>
                             </div>
                         </div>
