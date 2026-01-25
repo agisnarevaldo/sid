@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@600&family=Cormorant+Infant:ital,wght@0,500;1,500;1,600&family=Montserrat:wght@400;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-palanquin: "Palanquin", sans-serif;
+    --font-cormorant: "Cormorant Infant", serif;
+    --font-montserrat: "Montserrat", sans-serif;
+
+    --color-gold: #fcd890;
+    --color-purple-brand: #5e17eb;
+    --color-purple-light: #7c3aed;
+    --color-dark-bg: #0d0a13;
+    --color-dark-mid: #1b1a1a;
+}
